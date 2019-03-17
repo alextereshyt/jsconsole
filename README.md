@@ -1,7 +1,8 @@
-# jsconsole
+# Console v.1
 
 <p align="center">Open Source Console Engine</p>
-<a href="http://console.kl.com.ua/" align="center"> Official Site </a>
+<div align="center"><a href="http://console.kl.com.ua/" align="center"> Official Site </a></div>
+
 <h5 align="center"><u>Info</u></h5>
 <pre style="text-align:center;">Console version 1 is an open source console engine written on a java script that has many ways to use it. </pre>
 <h5 align="center"><u>Advantages</u></h5>
