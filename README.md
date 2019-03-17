@@ -12,19 +12,7 @@ Also you can add your program to custom applications list and make console bette
 </li> <li>
 You can add console on your site and use it</li>
 </ul>
-<h5 align="center"><u>Screenshots</u></h5>
 
-
-
-<!-- The four columns -->
-<div class="row" style="text-align:center">
-  
-  <div class="column">
-    <img src="http://console.kl.com.ua/Screenshot_20190317_102835.png" alt="Screenshot 3" width="600" hight="280" border="5" onclick="myFunction(this);">
-  </div>
-  <div class="column">
-    <img src="http://console.kl.com.ua/Screenshot_20190317_100508.png" width="600" hight="280" alt="Screenshot 1"  border="5"  onclick="myFunction(this);">
-  </div>
 
 
 <br>
@@ -53,7 +41,7 @@ If you want to add your own Javascript scripts, please read the instructions bel
 <td>To add a custom script you need to find the beginning and end of the comment "//Custom Applications start/end" in the code and insert your code there.<br>Also you can add description for your applications in "--help" command.</td>
 <td>
 
-<textarea rows="8" cols="50" border="none"  style="border: none;color: #ffffff; background-color: #000000">
+<pre>
 
 //custom applications start
 
@@ -62,7 +50,7 @@ do something;
 }
 
 //custom applications end
-</textarea>
+</pre>
 
 </td>
 </tr>
@@ -82,8 +70,8 @@ For example: If input equals your command , console log something.
 </td>
 <td>
 
-<textarea rows="8" cols="50" border="none"  style="border: none;color: #ffffff; background-color: #000000">
 
+<pre>
 if (terminal == "alert:x"){
 alert(x);
 }
@@ -91,14 +79,26 @@ else if (terminal == "console:txt"){
 var t = prompt("text");
 console.log(t);
 }
-</textarea>
+</pre>
 
 </td>
 
 </tr>
 </table>
 
+<h5 align="center"><u>Screenshots</u></h5>
 
+
+
+<!-- The four columns -->
+<div class="row" style="text-align:center">
+  
+  <div class="column">
+    <img src="http://console.kl.com.ua/Screenshot_20190317_102835.png" alt="Screenshot 3" width="600" hight="280" border="5" onclick="myFunction(this);">
+  </div>
+  <div class="column">
+    <img src="http://console.kl.com.ua/Screenshot_20190317_100508.png" width="600" hight="280" alt="Screenshot 1"  border="5"  onclick="myFunction(this);">
+  </div>
 
 
 <h5 align="center">Created by Alex Tereshchuk</h5>
