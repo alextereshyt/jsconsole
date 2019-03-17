@@ -20,38 +20,13 @@ You can add console on your site and use it</li>
 <div class="row" style="text-align:center">
   
   <div class="column">
-    <img src="http://console.kl.com.ua/Screenshot_20190317_102835.png" alt="Screenshot 3" style="width:100%" border="5" onclick="myFunction(this);">
-  </div>
-   <div class="column">
-    <img src="http://console.kl.com.ua/Screenshot_20190317_102944.png" alt="Screenshot 3" style="width:100%" border="5" onclick="myFunction(this);">
+    <img src="http://console.kl.com.ua/Screenshot_20190317_102835.png" alt="Screenshot 3" width="600" hight="280" border="5" onclick="myFunction(this);">
   </div>
   <div class="column">
-    <img src="http://console.kl.com.ua/Screenshot_20190317_100508.png" alt="Screenshot 1" style="width:100%" border="5"  onclick="myFunction(this);">
-  </div>
-  <div class="column">
-    <img src="http://console.kl.com.ua/Screenshot_20190317_100749.png" alt="Screenshot 2" style="width:100%" border="5" onclick="myFunction(this);">
+    <img src="http://console.kl.com.ua/Screenshot_20190317_100508.png" width="600" hight="280" alt="Screenshot 1"  border="5"  onclick="myFunction(this);">
   </div>
 
 
-<div class="container">
-  <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
-  <img id="expandedImg" style="width:100%">
-  <div id="imgtext"></div>
-</div>
-
-<script>
-function myFunction(imgs) {
-  var expandImg = document.getElementById("expandedImg");
-  var imgText = document.getElementById("imgtext");
-  expandImg.src = imgs.src;
-
-  expandImg.parentElement.style.display = "block";
-}
-  //<video 300"="" controls="controls" poster="www.JPG" width="400 hight=">
-   //<source src="consolee test-2019-03-17_09.01.54.mp4" type="video/ogg; codecs=&quot;theora, vorbis&quot;"">
-   
-  
-</script>
 <br>
 <h5 align="center"><u>Try it or Download</u></h5>
 <table align="center" width="700">
