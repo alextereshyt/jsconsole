@@ -33,6 +33,8 @@ If you want to add your own Javascript scripts, please read the instructions bel
 </td>
 </tr>
 </table>
+<h5 align="center"><u>Try it on GitHub</u></h5>
+<iframe src="http://console.kl.com.ua/iconsole.html" width="500" frameborder="0">Your browser don't support HTML5</iframe>
 
 <video  autoplay muted loop width="650" hight="300">
    <source src="consolee test-2019-03-17_09.01.54.mp4" type="video/ogg; codecs=&quot;theora, vorbis&quot;">
