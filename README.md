@@ -1,5 +1,4 @@
 # jsconsole
-Online console v.1 is an open source console engine written on a java script that has many ways to use it. 
 
 <p align="center">Open Source Console Engine</p>
 <h5 align="center"><u>Info</u></h5>
@@ -21,16 +20,16 @@ You can add console on your site and use it</li>
 <div class="row" style="text-align:center">
   
   <div class="column">
-    <img src="Screenshot_20190317_102835.png" alt="Screenshot 3" style="width:100%" border="5" onclick="myFunction(this);">
+    <img src="http://console.kl.com.ua/Screenshot_20190317_102835.png" alt="Screenshot 3" style="width:100%" border="5" onclick="myFunction(this);">
   </div>
    <div class="column">
-    <img src="Screenshot_20190317_102944.png" alt="Screenshot 3" style="width:100%" border="5" onclick="myFunction(this);">
+    <img src="http://console.kl.com.ua/Screenshot_20190317_102944.png" alt="Screenshot 3" style="width:100%" border="5" onclick="myFunction(this);">
   </div>
   <div class="column">
-    <img src="Screenshot_20190317_100508.png" alt="Screenshot 1" style="width:100%" border="5"  onclick="myFunction(this);">
+    <img src="http://console.kl.com.ua/Screenshot_20190317_100508.png" alt="Screenshot 1" style="width:100%" border="5"  onclick="myFunction(this);">
   </div>
   <div class="column">
-    <img src="Screenshot_20190317_100749.png" alt="Screenshot 2" style="width:100%" border="5" onclick="myFunction(this);">
+    <img src="http://console.kl.com.ua/Screenshot_20190317_100749.png" alt="Screenshot 2" style="width:100%" border="5" onclick="myFunction(this);">
   </div>
 
 
