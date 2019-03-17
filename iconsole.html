@@ -1,0 +1,530 @@
+<html>
+<head>
+<title>Console v1.0</title>
+<meta charset="utf-8" /> 
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata">
+ <style>
+      body {
+        font-family: 'Inconsolata', serif;
+        font-size: 30px;
+      }
+    </style>
+
+</head>
+
+<body bgcolor="#000000" text="#ffffff">
+<table>
+  <tr>
+  
+  
+  
+    <td><div id="log"></div></td>
+  
+    
+    
+    <td></td>
+  </tr>
+</table>
+<table>
+  <tr>
+    <td><div id="content" color="#ffffff"></div></td>
+    <td><input type="text" value="--help" id="txt"   style="background-color:#000000; border: 
+   none; color: #ffffff; height: 25px; font-size:18px; 
+    vertical-align:9px"/>
+<input type="submit" id="btn" value="" style="background-color:#000000; border: 
+   none; color:#ffffff ; height: 25px; font-size:18px; 
+    vertical-align:9px" /></td>
+    
+  </tr>
+</table>
+
+
+
+<script>
+var loops = [];
+var x;
+var loopn1;
+function promptt() {
+	
+}
+var input = document.getElementById("txt");
+
+input.addEventListener("keyup", function(event) {
+  if (event.keyCode === 13) {
+   event.preventDefault();
+   document.getElementById("btn").click();
+  }
+});
+
+(function () {
+    if (!console) {
+        console = {};
+    }
+    var old = console.log;
+    var logger = document.getElementById('log');
+    console.log = function (message) {
+        if (typeof message == 'object') {
+            logger.innerHTML += (JSON && JSON.stringify ? JSON.stringify(message) : String(message)) + '<br />';
+        } else {
+            logger.innerHTML += message + '<br />';
+        }
+    }
+})();
+   
+
+var terminal  ;
+function sleep(milliseconds) {
+  var start = new Date().getTime();
+  for (var i = 0; i < 1e7; i++) {
+    if ((new Date().getTime() - start) > milliseconds){
+      break;
+    }
+  }
+}
+
+
+function waits(ms)
+{
+var d = new Date();
+var d2 = null;
+do { d2 = new Date(); }
+while(d2-d < ms);
+}
+
+function randomInt(min,max){
+return Math.floor(Math.random() * (max - min) + min);
+}
+
+
+
+
+document.getElementById("content").innerHTML = ("guest" + "@console ~ $");
+console.log("guest" + "@console ~ $console:start ");
+
+var allcommands = ["--help" , "open:file" ,"alert:x" , "alert:txt" , "console:txt" , "tab:open" , "random:num" , "code:start" , "code:if" , "x:code" , "console:end" , "timer:start" ];
+//for (var i = 0; i < Infinity ; i++) {
+
+var loopst = [];
+
+
+function consolefunc() {
+	
+
+var terminal = 0;
+if (terminal == 0){
+var terminal = document.getElementById("txt").value;
+}
+console.log("guest" + "@console ~ $ " + terminal);
+if (terminal == "random:command"){
+console.log("Your random command - " + allcommands[randomInt(0,allcommands.length)]);
+}
+else if (terminal == "alert:x"){
+alert(x);
+}
+else if (terminal == "console:end"){
+console.log("@console ~ $console:end");
+waits(Infinity);
+}
+else if (terminal == "code:if"){
+var ocodeif = prompt("if");
+var tcodeif = prompt("if 2");
+var thcodeif = prompt("if 3");
+var fcodeif = prompt("if 4");
+if (ocodeif ==  tcodeif ){
+var thcodeif = fcodeif;
+console.log("Codeif = true");
+} else {
+console.log("Codeif = false");
+}
+}
+else if (terminal == "--help" ){
+console.log("Console v1.0");
+console.log("All commands:");
+console.log("--help - show command list");
+console.log("random:command - show randon command");
+console.log("alert:txt - show window massage");
+console.log("console:txt - write massage in console");
+console.log("tab:open - open site in browser");
+console.log("random:num - randon number");
+console.log("console:clear - clear console");
+console.log("code:start - start code");
+console.log("code:if - start code if");
+console.log("x:code - set the value to x");
+console.log("console:end - end console");
+//console.log("timer:start - починає відлік часу");
+console.log("open:file - open file in console");
+console.log("alert:x - show x ");
+console.log("calculator:start - start calculator");
+console.log("console:x - log x in console");
+console.log("array:create - create array with commands");
+console.log("array:log - show array in console");
+console.log("array:alert - show array in window");
+console.log("array:start - start enter commands ,which were in array");
+console.log("Custom Aplications:");
+console.log("profile:generate - generate profiles with random information");
+}
+else if (terminal == "alert:txt") {
+var promptalerttext = prompt("");
+alert(promptalerttext);
+console.log("//Done");
+}
+else if (terminal == "console:clear"){
+document.getElementById('log') = "";
+
+
+}
+else if (terminal == "calculator:start") {
+var a1 = prompt("First Number"); 
+var b1 = prompt("Sign");
+var c1 = prompt("Second Number");
+if (b1 == "+"){var answ = +a1 + +c1}
+if (b1 == "/"){var answ = +a1 / +c1}
+if (b1 == "-"){var answ = +a1 - +c1}
+if (b1 == "*"){var answ = +a1 * +c1}
+console.log("Answer - " + answ);
+}
+else if (terminal == "open:file") {
+var openfileprompt = prompt("");
+window.open("file:///" + openfileprompt);
+console.log("//Done");
+}
+else if (terminal == "console:txt"){
+var promptconsoletxt = prompt("");
+console.log(promptconsoletxt);
+
+console.log("//Done");
+}
+else if(terminal == "tab:open"){
+var prompttabopen = prompt("");
+window.open(prompttabopen);
+console.log(prompttabopen);
+console.log("Your tab has been opened.");
+console.log("//Done");
+}
+
+else if( terminal == "random:num") {
+var minrand =  prompt("Min random number. More in --help.");
+var maxrand =  prompt("Max random number. More in --help.");
+var randomnum = (randomInt(minrand , maxrand));
+ if( randomnum == NaN) { 
+console.log("console[random:num]: Number  not found");
+} else {
+console.log("Your random number - " + randomnum);
+console.log("//Done");
+}
+}
+else if (terminal == "console:x"){
+ x = prompt("Value");
+
+}
+else if (terminal == "x:log"){
+console.log(x);
+}
+
+
+else if (terminal == "alex:top"){
+console.log("alex top alex top alex top alex top alex top alex top alex top alex top alex top alex top alex top alex top alex top alex top alex alex top  ");
+}
+else if (terminal == "timer:start"){
+var timertime = prompt("Miliseconds");
+console.log("Timer has been started successful.");
+console.log("Your time is - " + timertime + " miliseconds.");
+sleep(timertime );
+console.log("//Done");
+
+}else if (terminal == "array:log"){
+for(var tt = 0 ; tt < loopn1 ; tt++){
+console.log(loops[tt]);
+}
+}
+
+else if (terminal == "array:alert"){
+for(var tt = 0 ; tt < loopn1 ; tt++){
+alert(loops[tt]);
+} 
+}
+else if (terminal == "array:start"){
+for(var tt = 0 ; tt < loopn1 ; tt++){
+var ter1 = loops[tt];
+terminal = ter1;
+
+
+//fake console	
+
+if (terminal == "random:command"){
+console.log("Your random command - " + allcommands[randomInt(0,allcommands.length)]);
+}
+else if (terminal == "alert:x"){
+alert(x);
+}
+else if (terminal == "console:end"){
+console.log("@console ~ $console:end");
+waits(Infinity);
+}
+else if (terminal == "code:if"){
+var ocodeif = prompt("if");
+var tcodeif = prompt("if 2");
+var thcodeif = prompt("if 3");
+var fcodeif = prompt("if 4");
+if (ocodeif ==  tcodeif ){
+var thcodeif = fcodeif;
+console.log("Codeif = true");
+} else {
+console.log("Codeif = false");
+}
+}
+else if (terminal == "--help" ){
+console.log("Console v1.0");
+console.log("All commands:");
+console.log("--help - show command list");
+console.log("random:command - show randon command");
+console.log("alert:txt - show window massage");
+console.log("console:txt - write massage in console");
+console.log("tab:open - open site in browser");
+console.log("random:num - randon number");
+console.log("console:clear - clear console");
+console.log("code:start - start code");
+console.log("code:if - start code if");
+console.log("x:code - set the value to x");
+console.log("console:end - end console");
+//console.log("timer:start - починає відлік часу");
+console.log("open:file - open file in console");
+console.log("alert:x - show x ");
+console.log("calculator:start - start calculator");
+console.log("console:x - log x in console");
+console.log("array:create - create array with commands");
+console.log("array:log - show array in console");
+console.log("array:alert - show array in window");
+console.log("array:start - start enter commands ,which were in array");
+}
+else if (terminal == "alert:txt") {
+var promptalerttext = prompt("");
+alert(promptalerttext);
+console.log("//Done");
+}
+else if (terminal == "console:clear"){
+document.getElementById('log') = "";
+
+
+}
+else if (terminal == "calculator:start") {
+var a1 = prompt("First Number"); 
+var b1 = prompt("Sign");
+var c1 = prompt("Second Number");
+if (b1 == "+"){var answ = +a1 + +c1}
+if (b1 == "/"){var answ = +a1 / +c1}
+if (b1 == "-"){var answ = +a1 - +c1}
+if (b1 == "*"){var answ = +a1 * +c1}
+console.log("Answer - " + answ);
+}
+else if (terminal == "open:file") {
+var openfileprompt = prompt("");
+window.open("file:///" + openfileprompt);
+console.log("//Done");
+}
+else if (terminal == "console:txt"){
+var promptconsoletxt = prompt("");
+console.log(promptconsoletxt);
+
+console.log("//Done");
+}
+else if(terminal == "tab:open"){
+var prompttabopen = prompt("");
+window.open(prompttabopen);
+console.log(prompttabopen);
+console.log("Your tab has been opened.");
+console.log("//Done");
+}
+
+else if( terminal == "random:num") {
+var minrand =  prompt("Min random number. More in --help.");
+var maxrand =  prompt("Max random number. More in --help.");
+var randomnum = (randomInt(minrand , maxrand));
+ if( randomnum == NaN) { 
+console.log("console[random:num]: Number  not found");
+} else {
+console.log("Your random number - " + randomnum);
+console.log("//Done");
+}
+}
+else if (terminal == "console:x"){
+ x = prompt("Value");
+
+}
+else if (terminal == "x:log"){
+console.log(x);
+}
+
+
+else if (terminal == "alex:top"){
+console.log("alex top alex top alex top alex top alex top alex top alex top alex top alex top alex top alex top alex top alex top alex top alex alex top  ");
+}
+else if (terminal == "timer:start"){
+var timertime = prompt("Miliseconds");
+console.log("Timer has been started successful.");
+console.log("Your time is - " + timertime + " miliseconds.");
+sleep(timertime );
+console.log("//Done");
+
+}else if (terminal == "array:log"){
+for(var tt = 0 ; tt < loopn1 ; tt++){
+console.log(loops[tt]);
+}
+}
+
+else if (terminal == "array:alert"){
+for(var tt = 0 ; tt < loopn1 ; tt++){
+alert(loops[tt]);
+} 
+}
+else if (terminal == "array:start"){
+for(var tt = 0 ; tt < loopn1 ; tt++){
+terminal = loops[tt];
+consolefunc();}
+}
+else if (terminal == "array:create"){
+var loopf = 0;
+loops = [];
+var loopn = prompt("How many commands?");
+loopn1 = loopn.replace(/^"(.+(?="$))"$/, '$1');
+for (loopf = 0; loopf < loopn1; loopf++){
+var loopr = prompt(loopf);
+//loops.push("loop" +loopf);
+loops[loops.length] = loopr;
+console.log(loopr);
+}
+console.log("Your array has been created //Done");
+console.log(loops);
+}
+
+else { 
+console.log("console: Command not found");
+}
+
+//fake console end
+
+
+console.log(tt);
+console.log(loops[tt]);
+console.log(terminal);
+}
+}
+else if (terminal == "array:create"){
+var loopf = 0;
+var loopn = prompt("How many commands?");
+loopn1 = loopn.replace(/^"(.+(?="$))"$/, '$1');
+
+for (loopf = 0; loopf < loopn1; loopf++){
+var loopr = prompt(loopf);
+//loops.push("loop" +loopf);
+loops[loops.length] = loopr;
+console.log(loopr);
+}
+loopst = loops;
+console.log("Your array has been created //Done");
+console.log(loops);
+}
+//custom aplications start
+else if(terminal == "profile:generate"){
+var y = 0;
+var y1 = prompt("How many profiles?");
+
+var x=Math.random(1,4);
+
+var lastnames = ["Савченки‎ ", "Абрагамовський ", "Бандрівський " , "Афендик " , "Адамський " , "Білоусенко " , "Вербицький " , "Варченко " ]
+
+var names = ["Августин" , "Арсен  " , "Білотур ", "Болеслав", "Валентин" , "Віталій" , "Гостомисл" , "Давид" , "Георгій" , "Захар" , "Ігор" , "Назарій" ];
+
+var points = [" 50 ", " 10 " ," 300" , " 600" , " 40 "  , " 5  " , " 12 " , " 33 " ," 44 " , " 55 " ,"  1 " ,"  2 " ," 13 " , "1000", " 90 "];
+
+var info1 = ["Привіт, мене звати "  ,
+"Моє Ім'я "  ,
+"Мене звати " ,
+"Шалом, я по імені " ,
+"Йо-йо-йоу, я " 
+
+];
+
+var info2 = ["Моя історія дуже цікава.",
+"Зараз я розкажу тобі мою історію.",
+"Хоч історію росзкажу. ",
+"Давай історію я тобі розкажу."
+
+];
+var info3 = ["Жила собі курочка Ряба і знесла та курочка яйце. Та не золоте , а просте.Дід бив-бив  яйце та не розбив , Баба била-била яйце та не розбила. А мишка бігла, хвостиком махнула, яєчко впало і розбилось, а з нього я вилажу.Ось і казочці кінець ,а хто слухав молодець." ,
+"Одного разу був конфлікт між Алексом та Максимом. І вирішили вони зробити інформаційну війну.А тоді я працював у службі  ASS(ALex`s Sicret Slujba). Та взяли мене у цю службу як Агента. І мав я секретно перебратися до бази Максима щоб прослідкувати що він робить і знищити його плани. Ну ось пішов я нападати , винищів майже всі бумаги Максима , спалив його секретну кімнату з багатствами, а потім пішов до Алекса. Аж тут виявляється ,що Алекс це переодягнутий Максим. А  потім з брудною совістю звільнився я з цієї роботи.",
+"Помітив лісник, що в нього дрова хтось скраєчку купи бере й бере. У дворі скласти те добро ніде, а собаку відпускати, щоб вночі за двором бігала, теж страшно, ще покусає когось... Подумав, подумав лісник, узяв дриль, нависвердлював дірочок, понапихав усередину пороху, та й склав підготовані поліна на той бік, де дрова крадуться. На ранок село облетіла звістка: у його кума грубу розірвало, аж цегла у вікна повилітала. Біга кум по селу та просить, хто грубу полагодить. Холодно в хаті.Вийшов лісник на вулицю, гукнув через паркан та й питає: „І що куме, гарно мої дрова горять?”",
+ "Сьогодні я, проходячи через парк, вирішив перекусити на лавочці. І тільки я розгорнув свій бутерброд, як під дубом неподалік зупинився автомобіль літньої пари.Вони опустили вікна і включили джаз. Чоловік вийшов з машини, відчинив двері й подав руку жінці, а після вони цілих півгодини повільно танцювали під тим самим дубом." ,
+  "Мій 21-річний лабрадор ледве може звестися, майже нічого не бачить і не чує, і у нього немає сил навіть гавкати. Але все одно, коли я входжу в кімнату, він радісно виляє хвостом.",
+  "Мій старший брат вже 15 разів здавав мені кістковий мозок, щоб допомогти мені боротися з раком. Він розмовляє про це безпосередньо з моїм лікарем, і я навіть не знаю, коли він це робить. І сьогодні лікар сказав мені, що, схоже, лікування починає допомагати. «Ми спостерігаємо стійку ремісію», сказав він.",
+"Їду якось в метро. Людей, на подив, небагато було у вагоні. Але одна людина мене привабив. Тобто, він мені навіть встиг набриднути! Всі на мене дивиться і дивиться, дивиться і дивиться, дивиться і дивиться.... І явно не закоханими очима! Я зібралася виходити вже.... І глянула нечайно на його руки. Вони тримали книжку «Як розпізнати відьму?». Я довго сміялася, поки виходила з метро. Невже я так на відьмочку схожа?",
+"Ми пішли на природу відзначати День Народження моєї подружки. Всі зібралися. Прийшла і собачка дівчини на ім'я Аліна. Вона ніколи з нею не розлучалася. З нею і веселіше було. Серега (брат Аліночка) добряче напився і почав гуляти з Радою (собакою). Погуляв так, що здійснив «сальто», зачепившись за поводок. Це так натурально виглядало, що від сміху можна було зійти з розуму! Ми часто згадуємо цю історію. Але Сергійко вже зовсім не хоче, щоб вона повторилася в реальності!"
+];
+
+var a = 0;
+
+for(var a = 0; a < (y1.replace(/^"(.+(?="$))"$/, '$1')) ; a++){
+var out = space;
+
+var u = ["     Name:  ", lastnames[randomInt(1, lastnames.length)] , names[a] , points[randomInt(1,points.length)] , " |"];
+
+var tatys = names[randomInt(1,names.length)];
+
+
+var mames = (u[0].length + u[1].length + u[2].length + u[3].length + u[4].length + 2);
+var y = (30 - mames);
+var out = space;
+
+
+console.log("-------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+console.log(" Name:  "+ lastnames[randomInt(1,lastnames.length)] + tatys + "  " +  randomInt(1, 31) + "/" + randomInt(1, 12)  + "/" + randomInt(1970, 2000) );
+console.log("-------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+console.log(" Information: "  );
+console.log(info1[randomInt(0 , info1.length)] + tatys + ".");
+console.log(info2[randomInt(0 , info2.length)]);
+console.log(info3[randomInt(0 , info3.length)]);
+console.log("-------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+}
+
+
+}
+
+
+
+
+
+//custom aplications end
+
+
+
+else { 
+console.log("console: Command not found");
+}
+
+
+}
+document.getElementById("btn").onclick = consolefunc;
+
+
+
+
+
+
+
+
+function space ( spaceCount ) {
+var out =+ '';
+for (var i = 0; i < y ; i++ ) {
+	out + " ";
+}
+
+	return out;
+}
+
+
+
+</script>
+
+
+</body>
+</html>
