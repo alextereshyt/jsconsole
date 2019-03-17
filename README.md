@@ -27,7 +27,7 @@ If you want to add your own Javascript scripts, please read the instructions bel
 
 </td>
 <td><ul type="square">
-<li>Try Console v.1 now in your browser <a href="AlexOS.html">here</a>.</li>
+<li>Try Console v.1 now in your browser <a href="http://console.kl.com.ua/AlexOS.html">here</a>.</li>
 <li>Download HTML file <a href="https://www.dropbox.com/s/5s7ylibkmlzsnxq/AlexOS.html?dl=1" >here</a>.</li>
 </ul>
 </td>
